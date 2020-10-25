@@ -1,4 +1,5 @@
-add_subdirectory("${PROJECT_SOURCE_DIR}/extern/googletest" "extern/googletest")
+include(GoogleTest)
+add_subdirectory("${PROJECT_SOURCE_DIR}/extern/benchmark/googletest" "extern/benchmark/googletest")
 
 mark_as_advanced(
     BUILD_GMOCK BUILD_GTEST BUILD_SHARED_LIBS
@@ -27,5 +28,5 @@ macro(package_add_test TESTNAME)
     set_target_properties(${TESTNAME} PROPERTIES FOLDER tests)
 endmacro()
 
-package_add_test(test1 test1.cpp ${PROJECT_SOURCE_DIR}/src/gl_api.cpp)
+package_add_test(test1 test1.cpp)
 target_include_directories(test1 PUBLIC ${PROJECT_SOURCE_DIR}/inc)

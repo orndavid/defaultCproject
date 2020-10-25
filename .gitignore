@@ -35,3 +35,8 @@
 build
 extern/benchmark
 
+# Vim extension
+*~
+
+# Emacs extension
+*#
